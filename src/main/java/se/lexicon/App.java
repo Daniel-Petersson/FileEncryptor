@@ -16,19 +16,19 @@ public class App
     public static void main( String[] args )
     {
         FileEncryptor fileEncryptor = new FileEncryptor();
-        fileEncryptor.setEncryptAlgorithm(new DESAlgorithm());
-        fileEncryptor.setKey("12345678".getBytes());
+        fileEncryptor.setEncryptAlgorithm(new AESAlgorithm());
+        fileEncryptor.setKey("1234567812345678".getBytes());
 
-        String encryptionResult = fileEncryptor.encryptFile("/home/daniel/Documents/Js odin.odt", "/home/daniel/Documents/encrypted.odt");
+        String encryptionResult = fileEncryptor.encryptFile("FILEPATH", "FILEPATH");
         System.out.println(encryptionResult);
 
-        String decryptionResult = fileEncryptor.decryptFile("/home/daniel/Documents/encrypted.odt", "/home/daniel/Documents/decrypted.odt");
+        String decryptionResult = fileEncryptor.decryptFile("FILEPATH", "FILEPATH");
         System.out.println(decryptionResult);
 
 
         //DES encryption
         DESAlgorithm desAlgorithm = new DESAlgorithm();
-        String desOriginalText = "Hello, World!";
+        String desOriginalText = "Alvar";
         byte[] desOriginalBytes = desOriginalText.getBytes();
         byte[] desKey = "12345678".getBytes(); // DES requires an 8 byte key
 
