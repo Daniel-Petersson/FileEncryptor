@@ -12,9 +12,9 @@ public class FileUtils {
         return Files.readAllBytes(path);
     }
 
-    public static void writeFile(String filePath, byte[] data) throws IOException{
+    public static void writeFile(String filePath, byte[] data) throws IOException {
         Path path = Paths.get(filePath);
-        Files.write(path,data);
+        Files.write(path, data);
     }
 
 }

@@ -14,24 +14,24 @@ public class FileEncryptor {
         return Files.readAllBytes(path);
     }
 
-    public String encryptFile(String inputFile, String outputFile){
-       try {
-           byte[] data = FileUtils.readFile(inputFile);
-           byte[] encryptedData = encryptAlgorithm.encrypt(data, key);
-           FileUtils.writeFile(outputFile, encryptedData);
-           return "Encryption successful"; // Add return statement
-       } catch (IOException e){
-           return "Encryption failed"; // Add return statement
-       }
+    public String encryptFile(String inputFile, String outputFile) {
+        try {
+            byte[] data = FileUtils.readFile(inputFile);
+            byte[] encryptedData = encryptAlgorithm.encrypt(data, key);
+            FileUtils.writeFile(outputFile, encryptedData);
+            return "Encryption successful"; // Add return statement
+        } catch (IOException e) {
+            return "Encryption failed"; // Add return statement
+        }
     }
 
-    public String decryptFile(String inputFile, String outputFile){
+    public String decryptFile(String inputFile, String outputFile) {
         try {
             byte[] data = FileUtils.readFile(inputFile);
             byte[] decryptedData = encryptAlgorithm.decrypt(data, key);
-            FileUtils.writeFile(outputFile,decryptedData);
+            FileUtils.writeFile(outputFile, decryptedData);
             return "Decryption successful"; // Add return statement
-        } catch (IOException e){
+        } catch (IOException e) {
             return "Decryption failed"; // Add return statement
         }
     }
