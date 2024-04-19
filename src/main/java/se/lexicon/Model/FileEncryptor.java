@@ -35,4 +35,12 @@ public class FileEncryptor {
             return "Decryption failed"; // Add return statement
         }
     }
+
+    public void setEncryptAlgorithm(EncryptionAlgorithm encryptAlgorithm) {
+        this.encryptAlgorithm = encryptAlgorithm;
+    }
+
+    public void setKey(byte[] key) {
+        this.key = key;
+    }
 }
